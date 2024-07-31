@@ -43,7 +43,6 @@ function taskService(app, Models) {
     const { userId } = req.query;
     try {
       const taskInstance = await Task.find({ user: userId });
-      console.log(taskInstance);
       const taskObj = taskInstance.reduce(
         (acc, task) => {
           if (task.status === 'toDo') {
